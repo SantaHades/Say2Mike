@@ -81,6 +81,20 @@ const ChatInterface: React.FC = () => {
     }
   };
 
+  // Instruction text translations
+  const instructionText: Record<string, string> = {
+    en: "Tap and speak in your language",
+    ko: "탭하고 자국어로 말하세요",
+    ja: "タップして自分の言語で話してください",
+    zh: "点击并用您的语言说话",
+    es: "Toca y habla en tu idioma",
+    fr: "Appuyez et parlez dans votre langue",
+    de: "Tippen und in Ihrer Sprache sprechen",
+    it: "Tocca e parla nella tua lingua",
+    ru: "Нажмите и говорите на своем языке",
+    pt: "Toque e fale no seu idioma"
+  };
+
   return (
     <div className="w-full max-w-md mx-auto rounded-2xl overflow-hidden glass-morphism shadow-xl">
       <div className="p-4 bg-blue-600 text-white flex justify-between items-center">
@@ -139,7 +153,9 @@ const ChatInterface: React.FC = () => {
       
       <div className="p-3 flex items-center justify-center border-t border-gray-200 bg-gray-50">
         <MicButton size="md" className="hover-lift" />
-        <span className="ml-3 text-sm text-gray-500">Tap and speak in your language</span>
+        <span className="ml-3 text-sm text-gray-500">
+          {instructionText[myLanguage] || instructionText.en}
+        </span>
       </div>
     </div>
   );
