@@ -2,6 +2,7 @@
 import React from 'react';
 import ScrollAnimation from './ScrollAnimation';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 interface FeatureSectionProps {
   id: string;
@@ -51,9 +52,9 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
               <p className="text-gray-600 mb-8 leading-relaxed">
                 {description}
               </p>
-              <button className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all hover-lift">
+              <Link to="/getting-started" className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all hover-lift inline-block">
                 Try It Now
-              </button>
+              </Link>
             </ScrollAnimation>
           </div>
         </div>

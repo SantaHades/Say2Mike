@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { ArrowDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -59,9 +60,12 @@ const Hero: React.FC = () => {
             <button className="w-full sm:w-auto px-8 py-3 text-white font-medium bg-blue-600 rounded-full hover:bg-blue-700 transition-all hover-lift">
               Start Chatting
             </button>
-            <button className="w-full sm:w-auto px-8 py-3 text-blue-600 font-medium bg-white border border-blue-200 rounded-full hover:border-blue-400 transition-all hover-lift">
+            <Link 
+              to="/getting-started" 
+              className="w-full sm:w-auto px-8 py-3 text-blue-600 font-medium bg-white border border-blue-200 rounded-full hover:border-blue-400 transition-all hover-lift"
+            >
               Learn More
-            </button>
+            </Link>
           </div>
           
           <div className="relative mx-auto max-w-4xl rounded-3xl overflow-hidden shadow-2xl">
