@@ -27,7 +27,19 @@ const ChatInterface: React.FC = () => {
         ja: 'こんにちは！今日はどうお過ごしですか？',
         zh: '你好！今天过得怎么样？',
         es: '¡Hola! ¿Cómo estás hoy?',
-        fr: 'Bonjour! Comment allez-vous aujourd\'hui?'
+        fr: 'Bonjour! Comment allez-vous aujourd\'hui?',
+        de: 'Hallo! Wie geht es Ihnen heute?',
+        it: 'Ciao! Come stai oggi?',
+        ru: 'Привет! Как у вас дела сегодня?',
+        pt: 'Olá! Como você está hoje?',
+        ar: 'مرحبا! كيف حالك اليوم؟',
+        hi: 'नमस्ते! आज आप कैसे हैं?',
+        vi: 'Xin chào! Hôm nay bạn thế nào?',
+        id: 'Halo! Bagaimana kabar Anda hari ini?',
+        nl: 'Hallo! Hoe gaat het vandaag met je?',
+        pl: 'Cześć! Jak się dzisiaj masz?',
+        tr: 'Merhaba! Bugün nasılsın?',
+        th: 'สวัสดี! วันนี้คุณเป็นอย่างไรบ้าง?',
       },
       isMine: true,
       timestamp: new Date(Date.now() - 300000)
@@ -40,7 +52,19 @@ const ChatInterface: React.FC = () => {
         ja: '元気です、ありがとうございます！',
         zh: '我很好，谢谢关心！',
         es: '¡Estoy muy bien, gracias por preguntar!',
-        fr: 'Je vais très bien, merci de demander!'
+        fr: 'Je vais très bien, merci de demander!',
+        de: 'Mir geht es gut, danke der Nachfrage!',
+        it: 'Sto benissimo, grazie per averlo chiesto!',
+        ru: 'У меня все отлично, спасибо, что спросили!',
+        pt: 'Estou ótimo, obrigado por perguntar!',
+        ar: 'أنا بخير، شكرا للسؤال!',
+        hi: 'मैं बहुत अच्छा कर रहा हूँ, पूछने के लिए धन्यवाद!',
+        vi: 'Tôi khỏe, cảm ơn vì đã hỏi!',
+        id: 'Saya baik-baik saja, terima kasih sudah bertanya!',
+        nl: 'Het gaat goed met me, bedankt voor het vragen!',
+        pl: 'Mam się świetnie, dziękuję za pytanie!',
+        tr: 'İyiyim, sorduğun için teşekkürler!',
+        th: 'ฉันสบายดี ขอบคุณที่ถาม!',
       },
       isMine: false,
       timestamp: new Date(Date.now() - 240000)
@@ -53,7 +77,19 @@ const ChatInterface: React.FC = () => {
         ja: '天気が良いですね。散歩に行きませんか？',
         zh: '天气真好。要去散步吗？',
         es: 'El clima está muy agradable. ¿Te gustaría dar un paseo?',
-        fr: 'Le temps est vraiment beau. Voulez-vous aller faire une promenade?'
+        fr: 'Le temps est vraiment beau. Voulez-vous aller faire une promenade?',
+        de: 'Das Wetter ist wirklich schön. Möchtest du spazieren gehen?',
+        it: 'Il tempo è davvero bello. Ti piacerebbe fare una passeggiata?',
+        ru: 'Погода действительно хорошая. Не хотите ли прогуляться?',
+        pt: 'O tempo está muito bom. Gostaria de ir dar um passeio?',
+        ar: 'الطقس جميل حقًا. هل ترغب في الذهاب للتنزه؟',
+        hi: 'मौसम वाकई अच्छा है। क्या आप टहलने जाना चाहेंगे?',
+        vi: 'Thời tiết thật đẹp. Bạn có muốn đi dạo không?',
+        id: 'Cuacanya sangat bagus. Maukah Anda pergi berjalan-jalan?',
+        nl: 'Het weer is echt mooi. Zou je een wandeling willen maken?',
+        pl: 'Pogoda jest naprawdę ładna. Czy chciałbyś się przejść?',
+        tr: 'Hava gerçekten güzel. Yürüyüşe çıkmak ister misin?',
+        th: 'อากาศดีจริงๆ คุณอยากไปเดินเล่นไหม?',
       },
       isMine: true,
       timestamp: new Date(Date.now() - 180000)
@@ -66,13 +102,26 @@ const ChatInterface: React.FC = () => {
         ja: 'はい、それは良いアイデアですね！',
         zh: '好啊，真是个好主意！',
         es: '¡Sí, eso suena como una gran idea!',
-        fr: 'Oui, c\'est une excellente idée!'
+        fr: 'Oui, c\'est une excellente idée!',
+        de: 'Sicher, das klingt nach einer großartigen Idee!',
+        it: 'Certo, sembra un\'ottima idea!',
+        ru: 'Конечно, это звучит как отличная идея!',
+        pt: 'Claro, isso parece uma ótima ideia!',
+        ar: 'بالتأكيد، تبدو فكرة رائعة!',
+        hi: 'ज़रूर, यह एक बहुत अच्छा विचार लगता है!',
+        vi: 'Chắc chắn rồi, nghe như một ý tưởng tuyệt vời!',
+        id: 'Tentu, itu terdengar seperti ide yang bagus!',
+        nl: 'Zeker, dat klinkt als een geweldig idee!',
+        pl: 'Jasne, to brzmi jak świetny pomysł!',
+        tr: 'Elbette, kulağa harika bir fikir gibi geliyor!',
+        th: 'แน่นอน นั่นฟังดูเป็นความคิดที่ยอดเยี่ยม!',
       },
       isMine: false,
       timestamp: new Date(Date.now() - 120000)
     }
   ];
 
+  // Handle language changes from the language selector
   const handleLanguageChange = (language: string, isMyLanguage: boolean) => {
     if (isMyLanguage) {
       setMyLanguage(language);
@@ -92,7 +141,15 @@ const ChatInterface: React.FC = () => {
     de: "Tippen und in Ihrer Sprache sprechen",
     it: "Tocca e parla nella tua lingua",
     ru: "Нажмите и говорите на своем языке",
-    pt: "Toque e fale no seu idioma"
+    pt: "Toque e fale no seu idioma",
+    ar: "اضغط وتحدث بلغتك",
+    hi: "टैप करें और अपनी भाषा में बोलें",
+    vi: "Nhấn và nói bằng ngôn ngữ của bạn",
+    id: "Ketuk dan bicara dalam bahasa Anda",
+    nl: "Tik en spreek in uw taal",
+    pl: "Dotknij i mów w swoim języku",
+    tr: "Dokunun ve dilinizde konuşun",
+    th: "แตะและพูดในภาษาของคุณ"
   };
 
   return (
@@ -134,9 +191,9 @@ const ChatInterface: React.FC = () => {
                   : "chat-bubble-other bg-gray-100 text-gray-800"
               )}
             >
-              <p className="text-sm">{message.translations[message.isMine ? myLanguage : theirLanguage]}</p>
+              <p className="text-sm">{message.translations[message.isMine ? myLanguage : theirLanguage] || message.translations.en}</p>
               <div className="mt-1 pt-1 border-t border-white/20 text-xs opacity-90">
-                {message.translations[message.isMine ? theirLanguage : myLanguage]}
+                {message.translations[message.isMine ? theirLanguage : myLanguage] || message.translations.en}
               </div>
             </div>
             <div 
