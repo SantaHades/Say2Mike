@@ -7,6 +7,7 @@ interface LanguageSelectorProps {
   label: string;
   defaultLanguage: string;
   position?: 'left' | 'right';
+  onLanguageChange?: (language: string) => void;
 }
 
 const languages = [
@@ -25,7 +26,8 @@ const languages = [
 const LanguageSelector: React.FC<LanguageSelectorProps> = ({ 
   label, 
   defaultLanguage,
-  position = 'left'
+  position = 'left',
+  onLanguageChange
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(
@@ -35,6 +37,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   const handleSelect = (language: typeof languages[0]) => {
     setSelectedLanguage(language);
     setIsOpen(false);
+    onLanguageChange?.(language.code);
   };
 
   return (
