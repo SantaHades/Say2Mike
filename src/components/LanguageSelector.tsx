@@ -243,12 +243,12 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     <div className="relative">
       <div className="text-sm text-gray-500 mb-1">{label}</div>
       <button 
-        className="glass-morphism flex items-center space-x-2 px-4 py-2 rounded-full text-gray-700 hover:shadow-md transition-all duration-300 hover-lift"
+        className="glass-morphism flex items-center space-x-2 px-4 py-2 rounded-full text-gray-700 hover:shadow-md transition-all duration-300 hover-lift w-full"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <Globe className="w-4 h-4 text-blue-600" />
-        <span className="truncate max-w-[160px]">{selectedLanguage.name}</span>
-        <ChevronDown className={cn("w-4 h-4 text-gray-400 transition-transform duration-300", 
+        <Globe className="w-4 h-4 text-blue-600 flex-shrink-0" />
+        <span className="truncate">{selectedLanguage.name}</span>
+        <ChevronDown className={cn("w-4 h-4 text-gray-400 transition-transform duration-300 flex-shrink-0 ml-auto", 
           isOpen ? "rotate-180" : "")} 
         />
       </button>
@@ -256,7 +256,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
       {isOpen && (
         <div 
           className={cn(
-            "glass-morphism absolute mt-2 w-72 rounded-xl shadow-lg overflow-hidden z-50 animate-scale-in",
+            "glass-morphism absolute mt-2 w-80 sm:w-96 rounded-xl shadow-lg overflow-hidden z-50 animate-scale-in",
             position === 'left' ? "left-0" : "right-0"
           )}
         >

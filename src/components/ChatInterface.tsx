@@ -159,19 +159,23 @@ const ChatInterface: React.FC = () => {
         <div className="text-xs text-blue-200">Live Translation</div>
       </div>
       
-      <div className="flex justify-between p-3 bg-blue-50 border-b border-blue-100">
-        <LanguageSelector 
-          label="Your language" 
-          defaultLanguage={myLanguage} 
-          position="left" 
-          onLanguageChange={(lang) => handleLanguageChange(lang, true)}
-        />
-        <LanguageSelector 
-          label="Their language" 
-          defaultLanguage={theirLanguage} 
-          position="right" 
-          onLanguageChange={(lang) => handleLanguageChange(lang, false)}
-        />
+      <div className="flex flex-col sm:flex-row justify-between p-3 bg-blue-50 border-b border-blue-100">
+        <div className="w-full mb-3 sm:mb-0 sm:mr-2">
+          <LanguageSelector 
+            label="Your language" 
+            defaultLanguage={myLanguage} 
+            position="left" 
+            onLanguageChange={(lang) => handleLanguageChange(lang, true)}
+          />
+        </div>
+        <div className="w-full sm:ml-2">
+          <LanguageSelector 
+            label="Their language" 
+            defaultLanguage={theirLanguage} 
+            position="right" 
+            onLanguageChange={(lang) => handleLanguageChange(lang, false)}
+          />
+        </div>
       </div>
       
       <div className="h-72 overflow-y-auto p-4 bg-white">
