@@ -209,6 +209,14 @@ const languages = [
   { code: 'zh-CN', name: '🇨🇳 China (中文)' }
 ];
 
+// Sort the languages alphabetically by name
+const sortedLanguages = [...languages].sort((a, b) => {
+  // Extract just the country name part (without flag and language)
+  const countryA = a.name.split(' ').slice(1).join(' ');
+  const countryB = b.name.split(' ').slice(1).join(' ');
+  return countryA.localeCompare(countryB);
+});
+
 const LanguageSelector: React.FC<LanguageSelectorProps> = ({ 
   label, 
   defaultLanguage,
@@ -253,7 +261,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           )}
         >
           <div className="max-h-60 overflow-y-auto py-1">
-            {languages.map((language) => (
+            {sortedLanguages.map((language) => (
               <button
                 key={language.code}
                 className={cn(
